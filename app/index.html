@@ -1,0 +1,44 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>UI Base is a launch pad for Angular webapps that speeds up the take-off</title>
+    <meta name="description" content="marketing-id stackable interface">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css css/vendor.css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) css/style.css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- endbuild -->
+</head>
+<body ng-app="twitter" ng-controller="TwitterController" ng-cloak>
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header ng-include="'components/header/index.html'"></header>
+
+    <section ui-view="content"></section>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    <!-- build:js js/vendor.js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-ui-bootstrap-bower/ui-bootstrap-tpls.js"></script>
+    <!-- endbuild -->
+    <!-- build:js({.tmp,app}) js/app.js -->
+    <script src="app.js"></script>
+    <script src="components/global/twitter.controller.js"></script>
+    <script src="components/_template/template.controller.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
