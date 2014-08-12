@@ -2,20 +2,29 @@
 
 var twitter = angular.module('twitter', [
     'ui.router',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'restangular'
 ]);
 
 twitter.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
     $httpProvider.defaults.useXDomain = true;
-    $stateProvider.state('template', {
-        url: '/template',
+    $stateProvider.state('user', {
+        url: '/user',
         views: {
             content: {
-                templateUrl: '/components/_template/index.html',
-                controller: 'TemplateController'
+                templateUrl: '/components/user/index.html',
+                controller: 'UserController'
+            }
+        }
+    }).state('ui-elements', {
+        url: '/ui-elements',
+        views: {
+            content: {
+                templateUrl: '/components/_ui-elements/index.html',
+                controller: 'UiElementsController'
             }
         }
     });
 
-    $urlRouterProvider.otherwise('/template');
+    $urlRouterProvider.otherwise('/ui-elements');
 });
