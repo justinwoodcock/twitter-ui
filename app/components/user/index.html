@@ -1,8 +1,67 @@
-<div class="container" id="view-user">
+<div class="container" id="user">
     <div class="row">
-        <div class="col-xs-12">
-            <h1>User</h1>
-            <p>This view is being loaded w/ the ui-router module, you can find the partial in <code>app/components/user/index.html</code></p>
+        <div class="col-xs-12 col-md-4">
+            
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="#">Tweets</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">Following</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">Followers</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">Favorites</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">Lists</a>
+                </li>
+            </ul>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">Tweet to {{user.name}}</div>
+                <div class="panel-body">
+                    
+                    <form action="">
+                        <div class="input-group input-group">
+                            <input type="text" class="form-control" value="{{user.handle}}">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button">send</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+                
+        </div>
+        <div class="col-xs-12 col-md-8">
+
+            <div class="jumbotron">
+                <h1>PHP Meetup!</h1>
+                <p>Let's build a Twitter clone.</p>
+                <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p>
+            </div>
+
+            <ul class="list-group tweet-list-group">
+                <li class="panel-heading list-group-item">
+                    <h4>Tweets</h4>
+                </li>
+                <li class="list-group-item tweet-list-item clearfix" ng-repeat="tweet in tweets">
+                    <a class="pull-left" href="#">
+                        <img class="tweet-avatar" ng-src="{{tweet.user.avatar}}" width="48">
+                    </a>
+                    <div class="tweet-body pull-left">
+                        <h4 class="tweet-heading">
+                            <span class="user-name">{{tweet.user.name}}</span>
+                            <span class="user-handle">{{tweet.user.handle}}</span> • {{tweet.date}}
+                        </h4>
+                        <p class="tweet-content">{{tweet.content}}</p>
+                    </div>
+                </li>
+            </ul>
+
         </div>
     </div>
 </div>
