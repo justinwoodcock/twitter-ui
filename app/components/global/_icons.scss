@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icons';
-  src: url('/font/icons.eot?19635724');
-  src: url('/font/icons.eot?19635724#iefix') format('embedded-opentype'),
-       url('/font/icons.woff?19635724') format('woff'),
-       url('/font/icons.ttf?19635724') format('truetype'),
-       url('/font/icons.svg?19635724#icons') format('svg');
+  src: url('/font/icons.eot?87073027');
+  src: url('/font/icons.eot?87073027#iefix') format('embedded-opentype'),
+       url('/font/icons.woff?87073027') format('woff'),
+       url('/font/icons.ttf?87073027') format('truetype'),
+       url('/font/icons.svg?87073027#icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +14,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'icons';
-    src: url('../font/icons.svg?19635724#icons') format('svg');
+    src: url('../font/icons.svg?87073027#icons') format('svg');
   }
 }
 */
@@ -64,3 +64,8 @@
 .icon-user:before { content: '\e80b'; } /* '' */
 .icon-users:before { content: '\e80c'; } /* '' */
 .icon-user-add:before { content: '\e80d'; } /* '' */
+.icon-reply:before { content: '\e80e'; } /* '' */
+.icon-star:before { content: '\e80f'; } /* '' */
+.icon-retweet:before { content: '\e810'; } /* '' */
+.icon-logout:before { content: '\e811'; } /* '' */
+.icon-login:before { content: '\e812'; } /* '' */

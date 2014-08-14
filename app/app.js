@@ -13,15 +13,23 @@ twitter.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         views: {
             content: {
                 templateUrl: '/components/login/index.html',
-                controller: 'LoginController'
+                controller: 'AuthController'
+            }
+        }
+    }).state('users', {
+        url: '/users',
+        views: {
+            content: {
+                templateUrl: '/components/users/users.html',
+                controller: 'UsersController'
             }
         }
     }).state('user', {
-        url: '/user/:handle',
+        url: '/users/:handle',
         views: {
             content: {
-                templateUrl: '/components/user/index.html',
-                controller: 'UserController'
+                templateUrl: '/components/users/index.html',
+                controller: 'UsersController'
             }
         }
     }).state('ui-elements', {
@@ -34,7 +42,7 @@ twitter.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         }
     });
 
-    $urlRouterProvider.otherwise('/ui-elements');
+    $urlRouterProvider.otherwise('/users');
 });
 
 twitter.config(function(RestangularProvider) {
@@ -49,3 +57,11 @@ twitter.config(function(RestangularProvider) {
         return extractedData;
     });
 });
+
+twitter.run(['$rootScope', '$state', 'AuthFactory',
+    function($rootScope, $state, AuthFactory) {
+        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+            $rootScope.hasAuth = AuthFactory.getAuth();
+        });
+    }
+]);

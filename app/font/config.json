@@ -47,6 +47,12 @@
       "src": "fontawesome"
     },
     {
+      "uid": "25b34dea4784f72c710454f32ff8fa2b",
+      "css": "star",
+      "code": 59407,
+      "src": "entypo"
+    },
+    {
       "uid": "bbd66ef66bb8fa9edde54d9a90b89150",
       "css": "user",
       "code": 59403,
@@ -77,6 +83,18 @@
       "src": "entypo"
     },
     {
+      "uid": "b6fc2f656ef87275889422e19550680a",
+      "css": "reply",
+      "code": 59406,
+      "src": "entypo"
+    },
+    {
+      "uid": "216891b0093d4dbef19877d5b00d1b16",
+      "css": "retweet",
+      "code": 59408,
+      "src": "entypo"
+    },
+    {
       "uid": "540b6a4262be769515c79700618b4aea",
       "css": "address",
       "code": 59400,
@@ -92,6 +110,18 @@
       "uid": "64f5a50cf7ac972a56a9a511acb5d28e",
       "css": "map",
       "code": 59402,
+      "src": "entypo"
+    },
+    {
+      "uid": "a204f0fa972408eaae5a363c444991b2",
+      "css": "login",
+      "code": 59410,
+      "src": "entypo"
+    },
+    {
+      "uid": "2d76f2c8d13be40694ecadfea7fb83c3",
+      "css": "logout",
+      "code": 59409,
       "src": "entypo"
     },
     {

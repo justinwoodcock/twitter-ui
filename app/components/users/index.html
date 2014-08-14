@@ -1,0 +1,82 @@
+<div class="container" id="user">
+    <div class="row">
+        <div class="col-xs-12 col-md-4">
+            
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <a href="#">Tweets</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">Following</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">Followers</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">Favorites</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="#">Lists</a>
+                </li>
+            </ul>
+
+            <div class="panel panel-default create-tweet">
+                <div class="panel-heading">Tweet to {{user.name}}</div>
+                <div class="panel-body">
+                    
+                    <form action="">
+                        <div class="input-group" ng-hide="clicked">
+                            <input type="text" class="form-control" value="@{{user.handle}}" ng-click="clicked=true">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" type="button" ng-click="clicked=true">tweet</button>
+                            </span>
+                        </div>
+                        <div class="input-group" ng-show="clicked">
+                            <textarea class="form-control">@{{user.handle}}</textarea>
+                            <button class="btn btn-primary" type="button" ng-click="tweet();clicked=false">tweet</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+                
+        </div>
+        <div class="col-xs-12 col-md-8">
+            <div class="jumbotron">
+                <h1>{{user.name}}</h1>
+                <p>{{user.bio}}</p>
+            </div>
+            <ul class="list-group tweet-list-group">
+                <li class="panel-heading list-group-item">
+                    <h4>Tweets</h4>
+                </li>
+                <li class="list-group-item tweet-list-item clearfix" ng-repeat="tweet in tweets">
+                    <a class="pull-left" href="#/users/{{user.handle}}">
+                        <img class="tweet-avatar" ng-src="{{user.profile_photo}}" width="48">
+                    </a>
+                    <div class="tweet-body">
+                        <h4 class="tweet-heading">
+                            <span class="user-name">{{user.name}}</span>
+                            <span class="user-handle">@{{user.handle}}</span> • 
+                            <span class="created-date">{{tweet.created_at}}</span>
+                        </h4>
+                        <p class="tweet-content">{{tweet.message}}</p>
+                    </div>
+                    <div class="tweet-actions">
+                        <div class="pull-right">
+                            <button class="btn btn-clear twitter-reply">
+                                <i class="icon-reply"></i>Reply
+                            </button>
+                            <button class="btn btn-clear twitter-reply">
+                                <i class="icon-retweet"></i>Retweet
+                            </button>
+                            <button class="btn btn-clear twitter-reply">
+                                <i class="icon-star"></i>Favorite
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

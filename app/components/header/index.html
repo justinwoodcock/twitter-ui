@@ -15,8 +15,16 @@
                 </div>
                 <div class="collapse navbar-collapse" collapse="navbarCollapsed">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="">
-                        </a></li>
+                        <li ng-controller="AuthController">
+                            <button ng-show="hasAuth==true" class="btn btn-default btn-logout" ng-click="logout()">
+                                <i class="icon-logout"></i>
+                                Logout
+                            </button>
+                            <button ng-show="hasAuth==false" ui-sref="login" class="btn btn-default btn-logout">
+                                <i class="icon-login"></i>
+                                Login
+                            </button>
+                        </li>
                     </ul>
                 </div>
             </div>
